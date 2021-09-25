@@ -99,4 +99,11 @@ export class ChartFinderService {
         return this.secondaries.map(movie => `${this.root}${slug}-${movie}.csv`)
     }
 
+    getChartsBySecondary(slug: string): Array<string> {
+        if (!this.secondaries.includes(slug)) {
+            return []
+        }
+        return this.primaries.map(movie => `${this.root}${movie}-${slug}.csv`)
+    }
+
 }
