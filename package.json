@@ -1,6 +1,6 @@
 {
-  "name": "digital-witchcraft",
-  "version": "0.0.0",
+  "name": "digital-witch-project",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

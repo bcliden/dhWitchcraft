@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "digital-witchcraft": {
+    "digital-witch-project": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/digital-witchcraft",
+            "outputPath": "dist/digital-witch-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "digital-witchcraft:build"
+            "browserTarget": "digital-witch-project:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "digital-witchcraft:build:production"
+              "browserTarget": "digital-witch-project:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "digital-witchcraft:build"
+            "browserTarget": "digital-witch-project:build"
           }
         },
         "test": {
@@ -116,15 +116,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "digital-witchcraft:serve"
+            "devServerTarget": "digital-witch-project:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "digital-witchcraft:serve:production"
+              "devServerTarget": "digital-witch-project:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "digital-witchcraft"
+  "defaultProject": "digital-witch-project"
 }
