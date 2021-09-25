@@ -10,7 +10,7 @@ const routes: Routes = [
     component: FiguresPageComponent,
     children: [
       { path: "", component: ListComponent },
-      { path: "frequency/:id", component: FrequencyComponent }
+      { path: "frequency/:slug", component: FrequencyComponent }
     ]
   }
 ];

@@ -1,20 +1,27 @@
 import { Injectable, OnInit } from "@angular/core";
 import { Movie, Links } from "./types";
+import slugify from 'slugify'
+
+const slug = str => slugify(str, {
+  replacement: '_',
+  // lower: true,
+  remove: /[*+~.()'"!:@]/g
+})
 
 @Injectable({
   providedIn: "root"
 })
 export class FiguresService {
   private movies: Movie[] = [
-    { id: 1, title: "Halloweentown", frequency: true },
-    { id: 2, title: "Harry Potter and the Sorcerer's Stone", frequency: true },
-    { id: 3, title: "Blair Witch Project", frequency: true },
-    { id: 4, title: "Snow White and the Seven Dwarfs", frequency: true },
-    { id: 5, title: "The Craft", frequency: true },
-    { id: 6, title: "Witches of Eastwick", frequency: true }
+    { id: 1, slug: slug("Halloweentown"), title: "Halloweentown", frequency: true },
+    { id: 2, slug: slug("Harry Potter and the Sorcerer's Stone"), title: "Harry Potter and the Sorcerer's Stone", frequency: true },
+    { id: 3, slug: slug("Blair Witch Project"), title: "Blair Witch Project", frequency: true },
+    { id: 4, slug: slug("Snow White and the Seven Dwarfs"), title: "Snow White and the Seven Dwarfs", frequency: true },
+    { id: 5, slug: slug("The Craft"), title: "The Craft", frequency: true },
+    { id: 6, slug: slug("Witches of Eastwick"), title: "Witches of Eastwick", frequency: true }
   ];
 
-  constructor() {}
+  constructor() { }
 
   getLinks(): Links {
     return {
@@ -22,7 +29,7 @@ export class FiguresService {
     };
   }
 
-  getMetadata(id: string): Movie {
-    return this.movies.find(el => el.id === parseInt(id));
+  getMetadata(slug: string): Movie {
+    return this.movies.find(el => el.slug === slug);
   }
 }

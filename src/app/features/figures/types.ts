@@ -1,6 +1,7 @@
 export type Movie = {
   title: string;
   id: number;
+  slug: string,
   frequency: boolean;
 };
 

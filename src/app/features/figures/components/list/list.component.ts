@@ -4,8 +4,14 @@ import { FiguresService } from "../../figures.service";
 
 @Component({
   selector: "app-list",
-  templateUrl: "./list.component.html",
-  styleUrls: ["./list.component.scss"]
+  template: `
+  <app-heading _title="Word Frequency" classes="blocks">
+    <div class="block" *ngFor="let link of links.frequency">
+      <a [routerLink]="['frequency', link.slug]">{{ link.title }}</a>
+    </div>
+  </app-heading>
+`,
+  styles: [``]
 })
 export class ListComponent implements OnInit {
   links: Links;
