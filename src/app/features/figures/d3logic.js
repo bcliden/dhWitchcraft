@@ -4,18 +4,30 @@
   https://github.com/bliden/digital-witchcraft-viz
 */
 
-import * as d3 from 'd3'
+import { 
+  axisBottom, 
+  axisLeft, 
+  csv, 
+  max,
+  scaleBand, 
+  scaleOrdinal,
+  scaleLinear, 
+  schemePaired, 
+  select, 
+  stack as d3stack, 
+  stackOffsetNone, 
+  stackOrderNone, 
+} from 'd3'
 
 export async function drawChart(element, file, count = 0) {
   let data = null;
   try {
-    data = await d3.csv(file)
+    data = await csv(file)
   } catch (e) {
     // debugger
     console.warn("couldn't find file: ", file)
     return false
   }
-
 
   /*
     word
@@ -35,8 +47,7 @@ export async function drawChart(element, file, count = 0) {
 
 function render(element, data, count) {
   // build top svg and append class no.
-  const svg = d3
-    .select(element)
+  const svg = select(element)
     .append("div")
     .attr("class", d => `chart-${count}`)
     .append("svg")
@@ -65,25 +76,23 @@ function render(element, data, count) {
   const [primary, secondary] = stackFields;
 
   // config X scale and axis
-  const xScale = d3
-    .scaleBand()
+  const xScale = scaleBand()
     .domain(data.map(xValue))
     .range([0, innerWidth])
     .padding(0.3);
 
-  const xAxis = d3.axisBottom(xScale);
+  const xAxis = axisBottom(xScale);
 
   // config Y scale and axis
-  const yScale = d3
-    .scaleLinear()
-    .domain([0, d3.max(data, yValue)])
+  const yScale = scaleLinear()
+    .domain([0, max(data, yValue)])
     .range([innerHeight, 0])
     .nice();
 
-  const yAxis = d3.axisLeft(yScale).tickSize(-innerWidth);
+  const yAxis = axisLeft(yScale).tickSize(-innerWidth);
 
   // set color scheme
-  const colors = d3.scaleOrdinal(d3.schemePaired);
+  const colors = scaleOrdinal(schemePaired);
 
   // append graph body & move according to margin
   const body = svg
@@ -107,11 +116,10 @@ function render(element, data, count) {
   xAxisG.select(".domain").remove();
 
   // Stack Generator
-  const stack = d3
-    .stack()
+  const stack = d3stack()
     .keys(stackFields)
-    .order(d3.stackOrderNone)
-    .offset(d3.stackOffsetNone);
+    .order(stackOrderNone)
+    .offset(stackOffsetNone);
   const series = stack(data);
 
   // append special g just for bars + series in graph
@@ -124,7 +132,7 @@ function render(element, data, count) {
     .enter()
     .append("g")
     .attr("class", "grouping")
-    .style("fill", (d, i) => d3.schemePaired[i + iteration]);
+    .style("fill", (d, i) => schemePaired[i + iteration]);
 
   // add bars across row
   groupings
@@ -186,7 +194,7 @@ function render(element, data, count) {
     .attr("x", innerWidth - 18)
     .attr("width", 18)
     .attr("height", 18)
-    .attr("fill", (d, i) => d3.schemePaired[i + iteration]);
+    .attr("fill", (d, i) => schemePaired[i + iteration]);
 
   legend
     .append("text")

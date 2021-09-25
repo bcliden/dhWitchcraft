@@ -36,7 +36,7 @@ export class ChartFinderService {
         "Harry_Potter_and_the_Deathly_Hallows_Part_One",
         "Harry_Potter_and_the_Deathly_Hallows_Part_Two",
         "Harry_Potter_and_the_Goblet_of_Fire",
-        "Harry_Potter_and_the_Half",
+        "Harry_Potter_and_the_Half-Blood_Prince",
         "Harry_Potter_and_the_Order_of_the_Phoenix",
         "Harry_Potter_and_the_Prisoner_of_Azkaban",
         "Harry_Potter_and_the_Sorcerer_s_Stone",

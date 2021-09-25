@@ -20,7 +20,7 @@ try {
     const csvFiles = f.filter(file => extname(file) === '.csv')
 
     const titles = new Set(
-        csvFiles.map(f => f.split(titleSeparator)[1])  // only second side
+        csvFiles.map(f => f.split(titleSeparator).slice(1).join(titleSeparator))  // only second side
             .map(f => f.replaceAll('.csv', ''))
     )
 
