@@ -1,0 +1,9 @@
+.active-link {
+  border-bottom: 2px solid var(--main-font-700);
+  font-weight: 700;
+
+  &:hover {
+    border-bottom: 2px dashed var(--chart-red-darker);
+    font-weight: 700;
+  }
+}

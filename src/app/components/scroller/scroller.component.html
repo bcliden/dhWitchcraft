@@ -1,0 +1,407 @@
+<section id="scroll" #scrollContainer>
+  <div class="scroll__graphic" #scrollGraphic>
+    <div class="chart" #chart>
+      <img
+        driftZoom
+        [refs]="driftZoomRefs"
+        class="driftImg boxOffice"
+        src="./assets/graphs/BoxOfficeReceipts.png"
+        data-step="0"
+        alt="Bar graph of Box Office Receipts"
+      />
+      <img
+        driftZoom
+        [refs]="driftZoomRefs"
+        class="driftImg imageplot"
+        src="./assets/graphs/Alpha-BrightnessVsHuePolar.png"
+        data-step="2"
+        alt="ImagePlot of Brightness vs. Hue"
+      />
+      <img
+        driftZoom
+        [refs]="driftZoomRefs"
+        class="driftImg imageplot"
+        src="./assets/graphs/Alpha-BrightnessVsSaturationAxis.png"
+        data-step="3"
+        alt="ImagePlot of Brightness vs. Saturation (Axis)"
+      />
+      <img
+        driftZoom
+        [refs]="driftZoomRefs"
+        class="driftImg imageplot"
+        src="./assets/graphs/Alpha-StillsBrightnessVsSaturation.png"
+        data-step="4"
+        alt="ImagePlot of (stills) Brightness vs. Saturation"
+      />
+      <img
+        driftZoom
+        [refs]="driftZoomRefs"
+        class="driftImg"
+        src="./assets/graphs/Scatterplot_Halloweentown.png"
+        data-step="6"
+        alt="Scatterplot of Halloweentown"
+      />
+      <img
+        driftZoom
+        [refs]="driftZoomRefs"
+        class="driftImg"
+        src="./assets/graphs/Scatterplot_HarryPotter.png"
+        data-step="6"
+        alt="Scatterplot of Harry Potter"
+      />
+      <img
+        driftZoom
+        [refs]="driftZoomRefs"
+        class="driftImg"
+        src="./assets/graphs/Scatterplot_SnowWhite.png"
+        data-step="7"
+        alt="Scatterplot of Snow White"
+      />
+      <img
+        driftZoom
+        [refs]="driftZoomRefs"
+        class="driftImg"
+        src="./assets/graphs/Scatterplot_BlairWitchProject.png"
+        data-step="7"
+        alt="Scatterplot of The Blair Witch Project"
+      />
+      <img
+        driftZoom
+        [refs]="driftZoomRefs"
+        class="driftImg"
+        src="./assets/graphs/Scatterplot_WitchesOfEastwick.png"
+        data-step="8"
+        alt="Scatterplot of Witches of Eastwick"
+      />
+      <img
+        driftZoom
+        [refs]="driftZoomRefs"
+        class="driftImg"
+        src="./assets/graphs/Scatterplot_TheCraft.png"
+        data-step="8"
+        alt="Scatterplot of The Craft"
+      />
+    </div>
+  </div>
+  <div class="scroll__text" #scrollText>
+    <div #step class="step" data-step="0">
+      <h3>Corpus Development and Collection</h3>
+      <img
+        class="mobileImg"
+        luminousLightbox
+        src="./assets/graphs/BoxOfficeReceipts.png"
+        alt="Bar graph of Box Office Receipts"
+      />
+      <p>
+        <span class="dropcap">I</span>n this first phase of the Digital Witch
+        Project, we collected an
+        <span
+          tippy
+          class="tooltip"
+          data-tippy-content="The inclusive list is typically unwieldy and includes all films that fit a “simple, tautological definition” (7). For
+                example, a Western (by this definition) is a film that takes place in the West. An exclusive list is curated and
+                focused on finding the quintessential films of a genre. Altman suggests that the inclusive list is based on semantics
+                whereas the exclusive list is based on syntactics."
+          >inclusive corpus*</span
+        >
+        of witch films. Despite the witch’s prevalence in the collective
+        imagination, no singular definition exists. For example, if we consider
+        both The Church and School of Wicca and Louisiana Voodoo, each employs
+        their own unique definition and identity. In the context of film genre,
+        though, cultural census allows us to readily identify a large number of
+        so-called “witch films” that have co-opted the term. We let public
+        opinion guide us as we created our corpus: If a film was called a witch
+        film by film distributors, marketing materials, fan websites, listicles,
+        or scholarly articles, we included it. This methodology necessarily
+        introduces certain biases, and in our case it immediately illustrated
+        how the figure of the witch is white-washed and subdued in media.
+        Lastly, we supplemented the list with any film that included named
+        “witches,” such as the three <em>Macbeth</em> films.
+      </p>
+      <p>
+        We then collected
+        <a
+          href="https://dhwitchcraft.tumblr.com/post/172893401162/text-collection"
+          target="_blank"
+          >dialogue transcripts</a
+        >, original
+        <a
+          href="https://dhwitchcraft.tumblr.com/post/172875783202/image-collection"
+          target="_blank"
+          >release posters</a
+        >, and most popular stills of each
+        <span
+          tippy
+          class="tooltip"
+          data-tippy-content="We conducted our search from the same computer over a one-day window to eliminate differences between browsers on
+            different computers and any changes to available results. Occasionally, the selection of our film stills required
+            various editorial decisions, including selecting identical, higher resolution versions of film stills and excluding
+            returns from the incorrect film."
+          >film.*</span
+        >
+        We employed the image comparison tool
+        <a
+          href="http://lab.softwarestudies.com/p/imageplot.html"
+          target="_blank"
+          >ImagePlot</a
+        >
+        to examine differences and similarities in hue, brightness, and
+        saturation among the release posters and film stills. Using the text
+        comparison tool
+        <a href="https://databasic.io/en/samediff/" target="_blank">SameDiff</a
+        >, we simultaneously compared each witch film’s dialogue to
+        <span
+          tippy
+          class="tooltip"
+          data-tippy-content="We picked these six films to serve as a proof of concept. We have plans in the future to gather similarity scores for
+            all films in the corpus."
+          >six films*</span
+        >
+        that indicate watershed moments in the genre’s development:
+        <em>Snow White and the Seven Dwarfs</em> (David Hand et al, 1937),
+        <em>The Witches of Eastwick</em>, <em>The Craft</em>,
+        <em>Halloweentown</em>, <em>The Blair Witch Project</em>, and
+        <em>Harry Potter and the Sorcerer’s Stone</em> (Chris Columbus, 2001).
+        Initially, we selected these prototypical films based on box office
+        receipts. The films that appeared when we found these receipts, after we
+        adjusted for inflations, were <em>Snow White</em> and the first
+        <em>Harry Potter</em>. We also observed how seminal two specific films,
+        <em>The Witches of Eastwick</em> and <em>The Craft</em>, were in fannish
+        and scholarly conversations about witch films. Similarly, when we
+        searched popular culture lists, the made-for-television movie
+        <em>Halloweentown</em> occupied a significant place in conversations;
+        this film highlighted a cycle of made-for-television witch movies that
+        our initial view of box office receipts ignored. The following
+        demonstrates our findings and analysis thereof.
+      </p>
+    </div>
+    <div #step class="step" data-step="1">
+      <h3>Visual Analysis Using ImagePlot</h3>
+      <p>
+        <span class="dropcap">I</span>n addition to informing our definition of
+        witch films as a genre, cultural perception also shaped how we
+        approached visual analysis. As mentioned earlier, we analyzed theatrical
+        posters and film stills to consider both how this genre is marketed and
+        received by audiences.
+      </p>
+      <p>
+        For theatrical posters, we used the poster associated with each film on
+        the
+        <a href="https://www.imdb.com/" target="_blank"
+          >Internet Movie Database (IMDB)</a
+        >. IMDB provided continuity—nearly all U.S. films are included in the
+        database—and also allowed us to study how viewers perceive witch films,
+        because IMDB pages are curated by
+        <a
+          href="https://help.imdb.com/article/contribution/contribution-information/how-do-i-contribute-data-to-imdb/GVZTHQ48SWS47WDK?ref_=helpsect_contrib_1_2#"
+          target="_blank"
+          >volunteer contributors</a
+        >
+        rather than by the film’s distributors. ImagePlot, then, allows us to
+        perform a color study of the collection of theatrical posters,
+        indicating what shared visual characteristics define marketing
+        techniques of the generic witch film.
+      </p>
+    </div>
+    <div #step class="step" data-step="2">
+      <img
+        class="mobileImg"
+        luminousLightbox
+        src="./assets/graphs/Alpha-BrightnessVsHuePolar.png"
+        alt="ImagePlot of Brightness vs. Hue"
+      />
+      <p>
+        We first rendered the posters as a polar visualization of brightness and
+        hue, which compares the relative lightness of the image to the
+        variations in colors or shades as they relate to the color wheel. The
+        majority of posters clustered around the center of the graph, which
+        means that, on average, those images use darker hues than ones toward
+        the edges. There were relatively few posters that used vibrant blue
+        hues, with the exceptions of <em>Bewitched</em> (Nora Ephron, 2005) and
+        <em>Sleeping Beauty</em> (Clyde Geronimi, 1959), and even fewer that
+        used green hues, excluding <em>Rosemary’s Baby</em>. Yet, if we consider
+        the films at the center of the graph, the generic witch film looks
+        different than expected. Where we might anticipate some combination of
+        warmer yellows and oranges, following the model of
+        <em>Practical Magic</em> (Griffin Dunne, 1998) or
+        <em>Halloweentown</em>, posters most commonly used black in combination
+        with colder blues and grays to suggest that the generic witch film
+        poster is icier, darker than expected. A surprising trend was the lack
+        of reds.
+      </p>
+    </div>
+    <div #step class="step" data-step="3">
+      <img
+        class="mobileImg"
+        luminousLightbox
+        src="./assets/graphs/Alpha-BrightnessVsSaturationAxis.png"
+        alt="ImagePlot of Brightness vs. Saturation (Axis)"
+      />
+      <p>
+        We also organized these theatrical posters to compare brightness and
+        saturation along the x- and- y-axes respectively. Here, the
+        visualization indicates a trend of higher saturation in theatrical
+        posters, which generally aligns with the darker hues of our first graph.
+        But organizing the posters by brightness and saturation also reveals a
+        cluster of outliers not apparent in our first visualization. There is a
+        cluster of films—<em>The Wizard of Oz</em> (Victor Fleming, 1939),
+        <em>Little Witches</em> (Jane Simpson, 1996),
+        <em>The Crucible</em> (Nicholas Hytner, 1996), and
+        <em>Maleficent</em> (Robert Stromberg, 2014), among others—near the
+        bottom right corner that have the highest possible brightness and lower
+        color saturations. All predominantly white in hue, these posters range
+        across subgenres and historical periods.
+      </p>
+    </div>
+    <div #step class="step" data-step="4">
+      <img
+        class="mobileImg"
+        luminousLightbox
+        src="./assets/graphs/Alpha-StillsBrightnessVsSaturation.png"
+        alt="ImagePlot of (stills) Brightness vs. Saturation"
+      />
+      <p>
+        Our visualization of film stills supports this analysis. For each film,
+        we collected the first image return from a Google Search for “[film
+        title] + film still.” Although the Google Search algorithm is partially
+        randomized, influenced by factors like the computer’s previous search
+        history, it also ranks pages based on their relevance to search terms
+        and allows for a study of how public discourse contextualizes each
+        <span
+          tippy
+          class="tooltip"
+          data-tippy-content="We conducted our search from the same computer over a one-day window to eliminate differences between browsers on
+            different computers and any changes to available results. Occasionally, the selection of our film stills required
+            various editorial decisions, including selecting identical, higher resolution versions of film stills and excluding
+            returns from the incorrect film."
+          >film.*</span
+        >
+        As the graph shows, the majority of film stills maintain a lower
+        brightness and higher saturation. Yet there are several exceptions:
+        <em>Suspiria</em> (Dario Argento, 1977), <em>Teen Witch</em> (Dorain
+        Walker, 1989), <em>The Little Mermaid</em> (Ron Clements & John Musker,
+        1989)—nearly off the graph—<em>Halloweentown</em>, and
+        <em>The Wicker Man</em> (Neil LaBute, 2006).
+      </p>
+    </div>
+    <div #step class="step" data-step="5">
+      <h3>Textual Analysis Using SameDiff</h3>
+      <p>
+        <span class="dropcap">T</span>urning from the visual similarity to
+        looking at the dialogue, we gathered cosine similarity scores for our
+        six benchmark films resulting in six distinct graphs, rendered using a
+        combination of RawGraphs and Adobe Illustrator. In all graphs, the
+        x-axis represents chronological time and the y-axis denotes the percent
+        similarity between a film and the potential prototypical film. We
+        included ratings because we thought that there would be some connection
+        or pattern in similarity between those films with similar ratings. While
+        this bore out in the made-for-TV witch films, beyond this cycle we don’t
+        see any significant ratings-based patterns.
+      </p>
+    </div>
+    <div #step class="step" data-step="6">
+      <img
+        class="mobileImg"
+        luminousLightbox
+        src="./assets/graphs/Scatterplot_Halloweentown.png"
+        alt="Scatterplot of Halloweentown"
+      />
+      <img
+        class="mobileImg"
+        luminousLightbox
+        src="./assets/graphs/Scatterplot_HarryPotter.png"
+        alt="Scatterplot of Harry Potter"
+      />
+      <p>
+        The graphs revealed a few unexpected trends. One of the most prominent
+        cycles is that of <em>Halloweentown</em>. Many of the closest films to
+        this are in fact other made-for-television witch films, such as
+        <em>Sabrina the Teenage Witch</em>. The success of
+        <em>Halloweentown</em> prompted several sequels, including
+        <em>Halloweentown II: Kalabar’s Revenge</em> (Mary Lambert, 2001),
+        <em>Halloweentown High</em> (Mark A. Z. Dippe, 2004), and
+        <em>Return to Halloweentown</em> (David Jackson, 2006). Meanwhile, the
+        Disney Channel also put out <em>Twitches</em> (Stuart Gillard, 2005) and
+        <em>Twitches, Too</em> (Stuary Gillard, 2007). This cycle is nested
+        within the genre; for example, <em>Halloweentown</em> and
+        <em>Witches of Eastwick</em> are 72 percent similar.
+      </p>
+      <p>
+        The <em>Harry Potter</em> films represent a distinct cycle but remain a
+        generic outlier. This underlines the ways in which
+        <em>Harry Potter</em> was not marketed as a witch film, even though half
+        the characters are witches. Despite the fact that the semantic elements
+        are present—the broomsticks, wands, cats and spells—the film’s dialogue
+        is quite dissimilar from other witch films. For example,
+        <em>Harry Potter and the Sorcerer’s Stone</em> is only 24 percent
+        similar to <em>The Witches of Eastwick</em>.
+      </p>
+    </div>
+    <div #step class="step" data-step="7">
+      <img
+        luminousLightbox
+        class="mobileImg"
+        src="./assets/graphs/Scatterplot_SnowWhite.png"
+        alt="Scatterplot of Snow White"
+      />
+      <img
+        luminousLightbox
+        class="mobileImg"
+        src="./assets/graphs/Scatterplot_BlairWitchProject.png"
+        alt="Scatterplot of The Blair Witch Project"
+      />
+      <p>
+        While <em>Harry Potter</em> represents an outlying cycle in the genre,
+        <em>The Blair Witch Project</em> and <em>Snow White</em> are outliers
+        all together. They are entirely dissimilar from the majority of films in
+        the genre and do not seem to initiate the production of dialogue-similar
+        films. <em>Snow White</em> is the highest grossing film in our corpus
+        with multiple theatrical releases. One would think that the second
+        highest grossing film and another heavy-hitter for Disney,
+        <em>Sleeping Beauty</em>, would have used similar language. Yet
+        <em>Sleeping Beauty</em> is only 18 percent similar to its studio
+        predecessor. In regards to our other outlier, the only films that
+        resembles <em>The Blair Witch Project</em> is <em>The Woods</em> at 52
+        percent, with all other films falling at or below 32 percent. Perhaps we
+        might say that <em>The Blair Witch Project</em> is a horror film first,
+        and a witch film second.
+      </p>
+    </div>
+    <div #step class="step" data-step="8">
+      <img
+        luminousLightbox
+        class="mobileImg"
+        src="./assets/graphs/Scatterplot_WitchesOfEastwick.png"
+        data-step="8"
+        alt="Scatterplot of Witches of Eastwick"
+      />
+      <img
+        luminousLightbox
+        class="mobileImg"
+        src="./assets/graphs/Scatterplot_TheCraft.png"
+        data-step="8"
+        alt="Scatterplot of The Craft"
+      />
+      <p>
+        If two prototypical, theatrical witch films seemed to emerge from this
+        study, it would be <em>The Witches of Eastwick</em> and
+        <em>The Craft</em>. Looking at the timeline of these graphs, we see an
+        uptick in the number of witch films produced after
+        <em>The Witches of Eastwick</em>. This could be explained by an uptick
+        in the sheer number of movies being made. However, it could also be tied
+        to the post-1970s increase in interest in Wicca and the concurrent
+        commodification of witchcraft or to greater recognition by production
+        companies of the attractiveness of the witch film as a genre. It is also
+        interesting that <em>The Witches of Eastwick</em> and
+        <em>The Craft</em> are 80 percent similar, despite the fact that they
+        are presumably geared toward distinct audiences: The first is about
+        three adult female friends having shared sexual, magical, and maternal
+        experiences, while the second is about the perils and promise of
+        ostracization and female friendship in high school. Both films have
+        garnered the majority of fan and scholarly attention in the genre, so it
+        is at the same time unsurprising that they coalesce at the level of
+        language.
+      </p>
+    </div>
+  </div>
+</section>
