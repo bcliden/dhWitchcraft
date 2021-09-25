@@ -9,7 +9,7 @@ import { FiguresService } from "src/app/features/figures/figures.service";
     <router-outlet></router-outlet>
   </section>
 `,
-  styles: [``]
+  styles: []
 })
 export class FiguresPageComponent implements OnInit {
   constructor() {}

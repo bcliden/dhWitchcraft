@@ -16,7 +16,7 @@ import { drawChart } from '../../d3logic.js'
     <div ngModel #charts></div>
   </app-heading>
   `,
-  styles: [``]
+  styles: []
 })
 export class FrequencyComponent implements OnInit {
   @ViewChild('charts', { static: true }) charts; 

@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from "@angular/core";
     <ng-content></ng-content>
   </section>
   `,
-  styles: [``]
+  styles: []
 })
 export class HeadingComponent implements OnInit {
   @Input() classes: string;

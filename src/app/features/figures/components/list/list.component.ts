@@ -11,7 +11,7 @@ import { FiguresService } from "../../figures.service";
     </div>
   </app-heading>
 `,
-  styles: [``]
+  styles: []
 })
 export class ListComponent implements OnInit {
   links: Links;
