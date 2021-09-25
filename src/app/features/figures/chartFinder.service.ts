@@ -1,11 +1,14 @@
-import { Injectable, OnInit } from "@angular/core";
-import { Movie, Links } from "./types";
+import { Injectable } from "@angular/core";
+import { APP_BASE_HREF } from '@angular/common';
+import { Inject } from "@angular/core";
 
 @Injectable({
-    providedIn: "root"
+    providedIn: 'root'
 })
 export class ChartFinderService {
-    private root = '/assets/csv/'
+    private path = 'assets/csv'
+    private url = this.baseHref + this.path
+
     private primaries: Array<string> = [
         'Halloweentown',
         'Harry_Potter_and_the_Sorcerers_Stone',
@@ -89,21 +92,23 @@ export class ChartFinderService {
         "Halloweentown"
     ]
 
-    constructor() { }
+    constructor(@Inject(APP_BASE_HREF) private baseHref: string) { }
 
     getChartsByPrimary(slug: string): Array<string> {
         // get primary movie, then pair with all secondaries, return file paths
         if (!this.primaries.includes(slug)) {
             return []
         }
-        return this.secondaries.map(movie => `${this.root}${slug}-${movie}.csv`)
+        const r = this.secondaries.map(movie => `${this.url}/${slug}-${movie}.csv`)
+        console.log("charts: ", r)
+        return r
     }
 
     getChartsBySecondary(slug: string): Array<string> {
         if (!this.secondaries.includes(slug)) {
             return []
         }
-        return this.primaries.map(movie => `${this.root}${movie}-${slug}.csv`)
+        return this.primaries.map(movie => `${this.url}/${movie}-${slug}.csv`)
     }
 
 }

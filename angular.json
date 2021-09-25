@@ -18,6 +18,8 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/digital-witch-project",
+            "baseHref": "/digital-witch-project/",
+            "deployUrl": "/digital-witch-project/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,7 +70,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "digital-witch-project:build"
+            "browserTarget": "digital-witch-project:build",
+            "baseHref": "/digital-witch-project/",
+            "deployUrl": "/digital-witch-project/"
           },
           "configurations": {
             "production": {
